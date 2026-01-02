@@ -1,39 +1,42 @@
 # Tayo Shell
 
-Tayo Shell is a **cross-platform command-line shell** designed to run seamlessly on **Windows, Linux, and MacOS** with a simple, consistent syntax.  
-It provides beginner-friendly commands, error handling, and scripting support for learning and automation.
+Tayo Shell သည် **cross-platform command-line shell** ဖြစ်ပြီး Windows, Linux, MacOS အားလုံးမှာ တူညီသော syntax ဖြင့် commands ကို run နိုင်ပါသည်။  
 
----
+### 🔹 Features
+- Cross-platform commands: `pr`, `list`, `make folder`, `re`, `install`
+- Positive / Negative / Fatal error codes
+- Scripts with `.tayo` extension
+- Simple, beginner-friendly syntax
+- Single `commands.py` file for all core commands
+- Examples included: `hello.tayo`, `folder_test.tayo`, `install_example.tayo`
+- Unit tests in `tests/` folder
 
-## 🔹 Features
-
-- **Cross-Platform** – Same commands work on all major OS.
-- **Simple Commands** – Easy-to-use commands: `pr`, `list`, `make folder`, `re`, `install`.
-- **Error Codes** – Clear feedback with positive, negative, and fatal errors:
-  - **0, 2, 4, 6** → Positive (success / actionable)
-  - **1, 3, 5** → Negative (user mistakes)
-  - **99** → Fatal / unrecoverable
-- **Script Support** – Execute scripts with `.tayo` extension.
-- **Single Commands File** – All core commands centralized in `commands.py`.
-- **Examples Included** – Pre-made example scripts for testing and learning.
-- **Unit Tests** – Verify command behavior and error codes with automated tests.
-
----
-
-## 🔹 Available Commands
+### 🔹 Commands
 
 | Command | Description | Example |
 |---------|------------|---------|
-| `pr("text")` | Print text to console | `pr("Hello")` |
+| `pr("text")` | Print text | `pr("Hello")` |
 | `list` | List folder contents | `list` |
-| `make folder <name>` | Create a folder | `make folder my_folder` |
-| `re <filename>` | Remove a file | `re file.txt` |
+| `make folder <name>` | Create folder | `make folder test` |
+| `re <filename>` | Remove file | `re file.txt` |
 | `install <language>` | Install programming language | `install python` |
 
----
+### 🔹 Error Codes
 
-## 🔹 Example Scripts
+| Code | Meaning | Type |
+|------|--------|------|
+| 0 | Success | Positive |
+| 2 | File not found | Positive |
+| 4 | Permission denied | Positive |
+| 6 | Install failed | Positive |
+| 1 | Unknown command | Negative |
+| 3 | Folder not found | Negative |
+| 5 | Invalid syntax | Negative |
+| 99 | Unknown error (Fatal) | Negative |
 
-### hello.tayo
-```tayo
-pr("Hello, Tayo Shell!")
+### 🔹 Usage
+
+1. Clone repository:
+```bash
+git clone https://github.com/tayo-programming-language/tayo-shell.git
+cd tayo-shell
